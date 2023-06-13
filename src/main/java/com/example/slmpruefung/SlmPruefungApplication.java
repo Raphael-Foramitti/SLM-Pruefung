@@ -10,9 +10,22 @@ public class SlmPruefungApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(SlmPruefungApplication.class, args);
+        // Eine Zahl wurde für Testzwecke ausgeählt
         int zahl = 12345;
         int quersumme = berechneQuersumme(zahl);
         System.out.println("Die Quersumme von " + zahl + " ist: " + quersumme);
+
+        //hier wird das konkrete Beispiel getstet
+        int erwarteteQuersumme = 15;
+
+        int berechneteQuersumme = berechneQuersumme(zahl);
+
+        if (berechneteQuersumme == erwarteteQuersumme) {
+            System.out.println("Die Quersumme wurde korrekt berechnet.");
+        } else {
+            System.out.println("Fehler: Die berechnete Quersumme ist " + berechneteQuersumme +
+                    ", erwartet wurde jedoch " + erwarteteQuersumme + ".");
+        }
     }
 
 
@@ -29,4 +42,5 @@ public class SlmPruefungApplication {
         System.out.println("Anzahl der Durchläufe: " + durchlaeufe);
         return quersumme;
     }
+
 }
